@@ -33,7 +33,7 @@ export async function getTileCategories() {
   return [...new Set(tiles.map((tile) => normalize(tile.category)).filter(Boolean))];
 }
 
-export async function getFeaturedTiles(limit = 8) {
+export async function getFeaturedTiles(limit = 4) {
   const tiles = await queryTiles({ sort: "title" });
   return tiles.slice(0, limit);
 }

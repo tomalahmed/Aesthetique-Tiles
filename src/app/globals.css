@@ -52,3 +52,19 @@ a {
 .tile-swatch {
   background: linear-gradient(130deg, var(--earth-bronze), var(--earth-gold));
 }
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  min-width: 200%;
+  animation: marquee-scroll 22s linear infinite;
+}

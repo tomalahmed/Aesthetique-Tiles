@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import CardShell from "@/components/ui/card-shell";
 import Chip from "@/components/ui/chip";
+import Button from "@/components/ui/button";
 
 export default function TileCard({ tile }) {
   return (
@@ -22,12 +23,9 @@ export default function TileCard({ tile }) {
       </div>
       <div className="flex items-center justify-between pt-2">
         <span className="text-sm font-semibold text-[var(--color-primary)]">${tile.price.toFixed(2)}</span>
-        <Link
-          href={`/tiles/${tile.id}`}
-          className="text-[11px] tracking-[0.12em] text-[var(--color-text-muted)] uppercase hover:text-[var(--color-text)]"
-        >
-          View Details
-        </Link>
+        <Button as={Link} href={`/tiles/${tile.id}`} variant="subtle" className="px-3 py-2 text-[10px]">
+          Details
+        </Button>
       </div>
     </CardShell>
   );

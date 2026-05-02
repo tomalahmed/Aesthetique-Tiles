@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { authClient } from "@/lib/auth-client";
 import Button from "@/components/ui/button";
 
@@ -13,7 +13,9 @@ const navLinks = [
 
 export default function Navbar() {
   const router = useRouter();
+  const pathname = usePathname();
   const { data: session, isPending } = authClient.useSession();
+  const loginHref = pathname ? `/login?next=${encodeURIComponent(pathname)}` : "/login";
 
   const handleLogout = async () => {
     await authClient.signOut();
@@ -45,21 +47,15 @@ export default function Navbar() {
             <span className="text-xs tracking-wide text-[var(--color-text-muted)] uppercase">Loading</span>
           ) : session?.user ? (
             <>
-              <Link
-                href="/my-profile"
-                className="text-xs tracking-[0.18em] text-[var(--color-text-muted)] uppercase transition-colors hover:text-[var(--color-text)]"
-              >
-                {session.user.name || "Profile"}
-              </Link>
+              <Button as={Link} href="/my-profile" variant="ghost">
+                {session.user.name || "My Profile"}
+              </Button>
               <Button onClick={handleLogout}>Logout</Button>
             </>
           ) : (
-            <Link
-              href="/login"
-              className="text-xs tracking-[0.18em] text-[var(--color-text-muted)] uppercase transition-colors hover:text-[var(--color-text)]"
-            >
+            <Button as={Link} href={loginHref}>
               Login
-            </Link>
+            </Button>
           )}
         </div>
       </div>

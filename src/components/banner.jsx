@@ -21,18 +21,18 @@ export default function Banner() {
       <div className="pointer-events-none absolute bottom-0 left-0 h-56 w-full bg-linear-to-t from-black/70 to-transparent" />
 
       <div className="relative max-w-3xl">
-        <p className="text-xs font-medium tracking-[0.3em] text-white/85 uppercase">
+        <p className="animate__animated animate__fadeInUp text-xs font-medium tracking-[0.3em] text-white/85 uppercase">
           Curated Surface Collection
         </p>
-        <h1 className="mt-4 text-3xl leading-tight font-semibold text-white sm:text-4xl lg:text-5xl">
+        <h1 className="animate__animated animate__fadeInUp animate__faster mt-4 text-3xl leading-tight font-semibold text-white sm:text-4xl lg:text-5xl">
           Discover Your Perfect Aesthetic
         </h1>
-        <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/85 sm:text-lg">
+        <p className="animate__animated animate__fadeInUp animate__fast mt-5 max-w-2xl text-base leading-relaxed text-white/85 sm:text-lg">
           Explore premium tile collections crafted for timeless interiors,
           modern architecture, and expressive design.
         </p>
 
-        <div className="mt-8">
+        <div className="animate__animated animate__fadeInUp animate__fast mt-8">
           <Button as={Link} href="/all-tiles" className="gap-2">
             Browse Now
             <span aria-hidden="true">→</span>
