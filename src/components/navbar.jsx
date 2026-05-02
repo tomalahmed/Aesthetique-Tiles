@@ -100,7 +100,7 @@ export default function Navbar() {
       </div>
 
       {isMenuOpen && (
-        <div className="border-t border-black/10 bg-white px-4 py-4 md:hidden">
+        <div className="animate__animated animate__fadeInDown animate__faster border-t border-black/10 bg-white px-4 py-4 md:hidden">
           <nav className="flex flex-col gap-3">
             {navLinks.map((link) => (
               <Link
