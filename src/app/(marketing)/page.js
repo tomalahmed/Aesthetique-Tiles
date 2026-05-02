@@ -2,6 +2,7 @@ import Banner from "@/components/banner";
 import Marquee from "@/components/home/marquee";
 import FilterPills from "@/components/home/filter-pills";
 import FeaturedGrid from "@/components/home/featured-grid";
+import ArchitecturalSpotlight from "@/components/home/architectural-spotlight";
 import { getFeaturedTiles, getTileCategories } from "@/lib/tiles-service";
 
 export default async function MarketingHomePage() {
@@ -13,6 +14,7 @@ export default async function MarketingHomePage() {
       <Marquee />
       <FilterPills categories={categories} />
       <FeaturedGrid tiles={featuredTiles} />
+      <ArchitecturalSpotlight />
     </div>
   );
 }

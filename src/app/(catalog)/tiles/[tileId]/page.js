@@ -1,17 +1,12 @@
 import Image from "next/image";
-import { notFound, redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 import CardShell from "@/components/ui/card-shell";
 import SectionTitle from "@/components/ui/section-title";
 import { getTileDetails } from "@/lib/tiles-service";
-import { getServerSession } from "@/lib/server-session";
 import Chip from "@/components/ui/chip";
 
 export default async function TileDetailsPage({ params }) {
   const { tileId } = await params;
-  const sessionData = await getServerSession();
-  if (!sessionData?.session?.user) {
-    redirect(`/login?next=/tiles/${tileId}`);
-  }
 
   const tile = await getTileDetails(tileId);
   if (!tile) {
