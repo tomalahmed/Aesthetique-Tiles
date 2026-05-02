@@ -11,10 +11,10 @@ export default function ArchitectsPage() {
         subtitle="Detail sheets, finish guidance, and product availability are coming soon."
       />
       <CardShell className="space-y-3">
-        <p className="text-sm text-[var(--color-text-muted)]">
+        <p className="text-sm text-(--color-text-muted)">
           Use the main tile gallery to shortlist textures while we finalize architect-specific tooling.
         </p>
-        <Link href="/all-tiles" className="text-sm font-semibold text-[var(--color-primary)] hover:underline">
+        <Link href="/all-tiles" className="text-sm font-semibold text-(--color-primary) hover:underline">
           Browse all tiles
         </Link>
       </CardShell>

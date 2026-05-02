@@ -64,9 +64,9 @@ export default function LoginForm({ nextPath = "/" }) {
   return (
     <CardShell className="mx-auto w-full max-w-md space-y-5">
       <div className="space-y-1">
-        <h1 className="text-2xl font-semibold text-[var(--color-text)]">User Login</h1>
-        <p className="text-sm text-[var(--color-text-muted)]">Sign in to access your private tile details and saved preferences.</p>
-        <p className="text-xs text-[var(--color-text-muted)]">
+        <h1 className="text-2xl font-semibold text-(--color-text)">User Login</h1>
+        <p className="text-sm text-(--color-text-muted)">Sign in to access your private tile details and saved preferences.</p>
+        <p className="text-xs text-(--color-text-muted)">
           You can reach this page from the navbar Login button or automatically when opening private routes.
         </p>
       </div>
@@ -87,9 +87,9 @@ export default function LoginForm({ nextPath = "/" }) {
       >
         {isGoogleLoading ? "Connecting Google..." : "Continue with Google"}
       </Button>
-      <p className="text-sm text-[var(--color-text-muted)]">
+      <p className="text-sm text-(--color-text-muted)">
         New here?{" "}
-        <Link href={registerHref} className="text-[var(--color-primary)] hover:underline">
+        <Link href={registerHref} className="text-(--color-primary) hover:underline">
           Create your account
         </Link>
       </p>

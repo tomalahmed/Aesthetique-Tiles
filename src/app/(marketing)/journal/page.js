@@ -11,10 +11,10 @@ export default function JournalPage() {
         subtitle="Editorial content and case studies are being assembled."
       />
       <CardShell className="space-y-3">
-        <p className="text-sm text-[var(--color-text-muted)]">
+        <p className="text-sm text-(--color-text-muted)">
           In the meantime, jump into current collections to explore available looks and materials.
         </p>
-        <Link href="/all-tiles" className="text-sm font-semibold text-[var(--color-primary)] hover:underline">
+        <Link href="/all-tiles" className="text-sm font-semibold text-(--color-primary) hover:underline">
           View current catalog
         </Link>
       </CardShell>

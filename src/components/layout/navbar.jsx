@@ -26,7 +26,7 @@ export default function Navbar() {
   return (
     <header className="border-b border-[var(--color-border)] bg-[var(--color-surface)]/90 backdrop-blur">
       <div className="mx-auto flex h-[76px] w-full max-w-[1280px] items-center justify-between px-6">
-        <Link href="/" className="text-xs font-semibold tracking-[0.3em] text-[var(--color-primary)] uppercase">
+        <Link href="/" className="text-xs font-semibold tracking-[0.3em] text-(--color-primary) uppercase">
           Aesthetique Tiles
         </Link>
 
@@ -35,7 +35,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-xs tracking-wide text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-text)]"
+              className="text-xs tracking-wide text-(--color-text-muted) transition-colors hover:text-(--color-text)"
             >
               {link.label}
             </Link>
@@ -44,7 +44,7 @@ export default function Navbar() {
 
         <div className="flex items-center gap-3">
           {isPending ? (
-            <span className="text-xs tracking-wide text-[var(--color-text-muted)] uppercase">Loading</span>
+            <span className="text-xs tracking-wide text-(--color-text-muted) uppercase">Loading</span>
           ) : session?.user ? (
             <>
               <Button as={Link} href="/my-profile" variant="ghost">

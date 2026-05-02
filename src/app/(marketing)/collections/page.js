@@ -11,10 +11,10 @@ export default function CollectionsPage() {
         subtitle="Navigate by mood, material character, and architectural intent."
       />
       <CardShell className="space-y-3">
-        <p className="text-sm text-[var(--color-text-muted)]">
+        <p className="text-sm text-(--color-text-muted)">
           Our collection navigator is expanding. For now, browse every curated surface from the gallery.
         </p>
-        <Link href="/all-tiles" className="text-sm font-semibold text-[var(--color-primary)] hover:underline">
+        <Link href="/all-tiles" className="text-sm font-semibold text-(--color-primary) hover:underline">
           Open full gallery
         </Link>
       </CardShell>

@@ -13,7 +13,7 @@ export default function Marquee() {
         {repeated.map((item, index) => (
           <span
             key={`${item}-${index}`}
-            className="mx-6 text-[11px] font-semibold tracking-[0.14em] text-[var(--color-accent)] uppercase"
+            className="mx-6 text-[11px] font-semibold tracking-[0.14em] text-(--color-accent) uppercase"
           >
             {item}
           </span>

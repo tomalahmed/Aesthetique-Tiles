@@ -4,7 +4,7 @@ export default function TileGrid({ tiles = [] }) {
   if (!tiles.length) {
     return (
       <div className="surface-card p-8 text-center">
-        <p className="text-sm text-[var(--color-text-muted)]">No tiles matched your search. Try another category or keyword.</p>
+        <p className="text-sm text-(--color-text-muted)">No tiles matched your search. Try another category or keyword.</p>
       </div>
     );
   }

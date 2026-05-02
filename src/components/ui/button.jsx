@@ -2,8 +2,8 @@ import { cn } from "@/lib/cn";
 
 const variants = {
   primary: "bg-[var(--color-primary)] text-[#181512] hover:opacity-90",
-  ghost: "bg-transparent text-[var(--color-text)] border border-[var(--color-border)] hover:bg-white/5",
-  subtle: "bg-[var(--color-surface)] text-[var(--color-text)] border border-[var(--color-border)] hover:border-[var(--color-primary)]",
+  ghost: "bg-transparent text-(--color-text) border border-[var(--color-border)] hover:bg-white/5",
+  subtle: "bg-[var(--color-surface)] text-(--color-text) border border-[var(--color-border)] hover:border-[var(--color-primary)]",
 };
 
 export default function Button({
