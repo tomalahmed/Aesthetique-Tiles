@@ -1,53 +1,36 @@
-# Tiles Gallery
+# Aesthetique Tiles
 
-Modern tile catalog and profile app built with Next.js App Router, Better Auth, and MongoDB.
+Premium tile catalog and profile experience built with Next.js App Router, Better Auth, and MongoDB.
 
-## Features
+## What This App Includes
 
-- Responsive marketing + catalog pages
-- Search, filter, and sort tile listings
-- Tile detail pages with image support
-- Authentication with Better Auth (email/password + Google OAuth)
-- Protected profile and profile update pages
-- Mobile navbar with animated menu and Font Awesome icons
+- Marketing pages for brand and trade onboarding
+- Tile catalog with search, filtering, and sorting
+- Tile detail page with protected access and favorite toggle
+- Email/password auth + Google OAuth
+- Protected profile area with:
+  - saved tiles (live count updates)
+  - profile update
+  - account settings (notifications + security)
+- Mobile-first navigation with animated hamburger menu
 
 ## Tech Stack
 
-- Next.js 16 (App Router)
-- React 19
-- Tailwind CSS 4
-- Better Auth
-- MongoDB
-- Font Awesome
+- `Next.js 16` (App Router)
+- `React 19`
+- `Tailwind CSS 4`
+- `Better Auth`
+- `MongoDB`
+- `Font Awesome`
 
-## Project Structure
+## Scripts
 
-```text
-src/
-  app/
-    (marketing)/           # Home and marketing pages
-    (catalog)/             # All tiles + tile details
-    (auth)/                # Login and register pages
-    my-profile/            # Protected profile pages
-    api/auth/[...all]/     # Better Auth API route
-  components/
-    auth/                  # Login/register forms
-    layout/                # Navbar, footer
-    home/                  # Home page sections
-    tiles/                 # Catalog UI pieces
-    profile/               # Profile update form
-    ui/                    # Reusable UI primitives
-  lib/
-    auth.js                # Better Auth server config
-    auth-client.js         # Better Auth client
-    server-session.js      # Server-side session helper
-    mongodb.js             # MongoDB connection
-    tiles-db.js            # Local JSON tile data reader
-    tiles-service.js       # Search/filter/sort helpers
-  db/db.json               # Tile seed/catalog data
-```
+- `npm run dev` - run development server
+- `npm run build` - production build
+- `npm run start` - run production server
+- `npm run lint` - run ESLint
 
-## Getting Started
+## Setup
 
 ### 1) Install dependencies
 
@@ -55,9 +38,7 @@ src/
 npm install
 ```
 
-### 2) Create environment file
-
-Create `.env.local` in project root:
+### 2) Create `.env.local`
 
 ```env
 # Better Auth
@@ -74,41 +55,105 @@ GOOGLE_CLIENT_ID=your_google_client_id
 GOOGLE_CLIENT_SECRET=your_google_client_secret
 ```
 
-### 3) Run development server
+### 3) Start app
 
 ```bash
 npm run dev
 ```
 
-App runs at [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:3000](http://localhost:3000).
 
-## Available Scripts
+## Route Map
 
-- `npm run dev` - start dev server
-- `npm run build` - build for production
-- `npm run start` - run production server
-- `npm run lint` - run ESLint
+### Public / Marketing
 
-## Main Routes
+- `/` - homepage
+- `/architects` - architect-focused marketing page
+- `/trade-access` - trade access information
+- `/trade-terms` - trade terms and conditions
 
-- `/` - marketing home page
-- `/all-tiles` - catalog page (search/filter/sort)
-- `/tiles/[tileId]` - tile details page
-- `/login` - login
-- `/register` - registration
-- `/my-profile` - protected profile page
-- `/my-profile/update` - protected profile update page
+### Auth
 
-## Notes
+- `/login`
+- `/register`
+- `/forgot-password`
 
-- Keep `BETTER_AUTH_URL` and `NEXT_PUBLIC_BETTER_AUTH_URL` identical to your app origin.
+### Catalog
+
+- `/all-tiles` - searchable and filterable catalog
+- `/tiles/[tileId]` - tile details (requires login)
+
+### Profile (Protected)
+
+- `/my-profile`
+- `/my-profile/update`
+- `/my-profile/settings`
+
+### Removed Routes
+
+- `/collections` -> `404` (removed intentionally)
+- `/journal` -> `404` (removed intentionally)
+
+## API Endpoints
+
+- `/api/auth/[...all]` - Better Auth route handler
+- `/api/favorites` - get/add user favorite tile IDs and tiles
+- `/api/favorites/[tileId]` - remove a favorite tile
+- `/api/account-settings` - get/update user notification settings
+
+## Data Sources
+
+- Tile catalog source: `src/db/db.json`
+- Favorites collection: `user_favorites` (MongoDB)
+- Account settings collection: `user_account_settings` (MongoDB)
+
+`src/lib/tiles-db.js` normalizes image paths that start with `/public/` into `/` at runtime.
+
+## Authentication Notes
+
+- Better Auth session is used for protected routes and API endpoints.
+- Google OAuth is enabled only when both `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` are set.
+- Register (email/password) sets a default profile avatar: `/default-profile.svg`.
+
+## Image Handling
+
+- Local tile and UI assets are served from `public/`.
 - Remote images are allowed from:
   - `images.unsplash.com`
   - `source.unsplash.com`
   - `picsum.photos`
   - `lh3.googleusercontent.com`
 
-## Security
+Configured in `next.config.mjs`.
 
-- Do not commit real secrets to git.
-- If any secret was exposed, rotate it immediately (auth secret, MongoDB URI, OAuth credentials).
+## Project Structure (High Level)
+
+```text
+src/
+  app/
+    (marketing)/                  # Home + brand/trade pages
+    (catalog)/                    # all-tiles + tile details
+    (auth)/                       # login/register/forgot-password
+    my-profile/                   # protected profile pages
+    api/
+      auth/[...all]/route.js
+      favorites/route.js
+      favorites/[tileId]/route.js
+      account-settings/route.js
+  components/
+    auth/                         # auth forms
+    layout/                       # navbar/footer
+    home/                         # homepage sections
+    profile/                      # profile UI + account settings UI
+    tiles/                        # tile cards/details/favorite button
+    ui/                           # shared primitives
+  db/db.json                      # tile catalog JSON
+  lib/                            # auth, DB, sessions, tile services
+public/                           # static assets/images
+```
+
+## Development Notes
+
+- Run `npm run lint` before pushing changes.
+- Keep `BETTER_AUTH_URL` and `NEXT_PUBLIC_BETTER_AUTH_URL` aligned with your app origin.
+- Avoid committing secrets (`.env.local` should stay local).
