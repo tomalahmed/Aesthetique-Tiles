@@ -106,5 +106,113 @@
     "dimensions": "30x30 cm",
     "material": "Ceramic",
     "inStock": true
+  },
+  {
+    "id": "tile_010",
+    "title": "Ivory Matte Tile",
+    "description": "Soft matte ivory surface for minimalist spaces",
+    "image": "/1.png",
+    "category": "matte",
+    "price": 49.00,
+    "currency": "USD",
+    "dimensions": "60x60 cm",
+    "material": "Porcelain",
+    "inStock": true
+  },
+  {
+    "id": "tile_011",
+    "title": "Sage Stone Tile",
+    "description": "Muted green stone-inspired tile with subtle texture",
+    "image": "/2.png",
+    "category": "stone",
+    "price": 54.25,
+    "currency": "USD",
+    "dimensions": "60x60 cm",
+    "material": "Ceramic",
+    "inStock": true
+  },
+  {
+    "id": "tile_012",
+    "title": "Desert Sand Tile",
+    "description": "Warm sand-toned tile suited for earthy interiors",
+    "image": "/3.png",
+    "category": "sand",
+    "price": 46.80,
+    "currency": "USD",
+    "dimensions": "80x80 cm",
+    "material": "Porcelain",
+    "inStock": true
+  },
+  {
+    "id": "tile_013",
+    "title": "Noir Vein Marble Tile",
+    "description": "Dark marble-look tile with elegant veining",
+    "image": "/4.jpg",
+    "category": "marble",
+    "price": 78.40,
+    "currency": "USD",
+    "dimensions": "120x60 cm",
+    "material": "Porcelain",
+    "inStock": true
+  },
+  {
+    "id": "tile_014",
+    "title": "Pebble Grey Tile",
+    "description": "Neutral pebble grey finish for modern floor layouts",
+    "image": "/5.jpg",
+    "category": "floor",
+    "price": 44.90,
+    "currency": "USD",
+    "dimensions": "60x60 cm",
+    "material": "Ceramic",
+    "inStock": false
+  },
+  {
+    "id": "tile_015",
+    "title": "Amber Clay Tile",
+    "description": "Natural amber clay texture with handcrafted character",
+    "image": "/6.jpg",
+    "category": "terracotta",
+    "price": 51.30,
+    "currency": "USD",
+    "dimensions": "40x40 cm",
+    "material": "Clay",
+    "inStock": true
+  },
+  {
+    "id": "tile_016",
+    "title": "Ocean Mist Mosaic",
+    "description": "Fine mosaic composition with cool ocean-inspired tones",
+    "image": "/7.jpg",
+    "category": "mosaic",
+    "price": 67.00,
+    "currency": "USD",
+    "dimensions": "30x30 cm",
+    "material": "Ceramic",
+    "inStock": true
+  },
+  {
+    "id": "tile_017",
+    "title": "Graphite Polished Tile",
+    "description": "Polished graphite tile for premium contemporary interiors",
+    "image": "/8.jpg",
+    "category": "granite",
+    "price": 82.10,
+    "currency": "USD",
+    "dimensions": "60x60 cm",
+    "material": "Granite",
+    "inStock": false
+  },
+  {
+    "id": "tile_018",
+    "title": "Classic Heritage Pattern Tile",
+    "description": "Vintage-inspired pattern tile for statement walls",
+    "image": "/9.jpg",
+    "category": "decorative",
+    "price": 61.50,
+    "currency": "USD",
+    "dimensions": "30x30 cm",
+    "material": "Ceramic",
+    "inStock": true
   }
 ]
